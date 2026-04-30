@@ -1,26 +1,242 @@
-@import "tailwindcss";
+/* =========================
+   GLOBAL RESET + BASE
+========================= */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html, body {
+  height: 100%;
+  background: #ffffff;
+  color: #111827;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  line-height: 1.5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Smooth rendering */
+html {
+  scroll-behavior: smooth;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* =========================
+   TYPOGRAPHY SYSTEM
+========================= */
+
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  color: #111827;
+  letter-spacing: -0.01em;
+}
+
+p {
+  color: #4b5563;
+}
+
+/* Links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================
+   LAYOUT CONTAINERS
+========================= */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Page wrapper */
+.page {
+  padding: 24px;
+}
+
+/* =========================
+   CARDS (GLOBAL STYLE)
+========================= */
+
+.card {
+  background: #ffffff;
+  border: 1px solid #f1f1f1;
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: #e5e7eb;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: 0.2s ease;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-outline {
+  border: 1px solid #e5e7eb;
+  background: white;
+  color: #111827;
+}
+
+.btn-outline:hover {
+  background: #f9fafb;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  font-size: 14px;
+  background: white;
+  transition: 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.08);
+}
+
+/* =========================
+   BADGES
+========================= */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 999px;
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* =========================
+   TABLE STYLE (ADMIN READY)
+========================= */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 14px;
+}
+
+th {
+  color: #6b7280;
+  font-weight: 600;
+}
+
+/* =========================
+   SIDEBAR SAFE AREA
+========================= */
+
+.sidebar {
+  background: white;
+  border-right: 1px solid #f1f1f1;
+}
+
+/* =========================
+   TOPBAR STYLE
+========================= */
+
+.topbar {
+  background: white;
+  border-bottom: 1px solid #f3f4f6;
+  height: 60px;
+}
+
+/* =========================
+   UTILITIES
+========================= */
+
+.shadow-soft {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.border-soft {
+  border: 1px solid #f1f1f1;
+}
+
+.text-muted {
+  color: #6b7280;
+}
+
+.text-title {
+  color: #111827;
+  font-weight: 600;
+}
+
+/* =========================
+   SCROLLBAR CLEAN STYLE
+========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9fafb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d1d5db;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+.fade-in {
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
