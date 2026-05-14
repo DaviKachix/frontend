@@ -70,20 +70,20 @@ export default function Footer() {
         </div>
 
         {/* BOTTOM BAR */}
-        <div className="border-t pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-medium text-black">
+        <div className="border-t pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-light text-black">
 
           <div>
             © {new Date().getFullYear()} PASTOR'S KIDS INTERNATIONAL ASSOCIATION
           </div>
 
           <div>
-            Made by{" "}
+            Developed by {" "}
             <a
               href="https://www.tait.tz"
               target="_blank"
-              className="font-semibold text-red-900 hover:text-lime-400 transition"
+              className="font-light text-red-900 hover:text-lime-400 transition"
             >
-              Tanzania Adventist Institute of Technology (TAIT)
+              TAIT
             </a>
           </div>
 

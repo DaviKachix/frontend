@@ -35,7 +35,7 @@ export default function Dashboard() {
       setUser(parsed);
 
       axios
-        .get(`http://localhost:5000/api/profiles/${parsed.id}`)
+        .get(`http://157.180.17.101:5000/api/profiles/${parsed.id}`)
         .then((res) => setProfileExists(!!res.data))
         .catch(() => setProfileExists(false))
         .finally(() => setLoading(false));
@@ -57,7 +57,7 @@ export default function Dashboard() {
       <div className="flex-1 flex flex-col min-h-screen">
 
         {/* TOPBAR (NEW ADDED) */}
-        <Topbar user={user} toggle={() => setOpen(true)} />
+        <Topbar/>
 
         {/* CONTENT */}
         <main className="flex-1 p-6 md:p-10 space-y-6 max-w-7xl mx-auto w-full">

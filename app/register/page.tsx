@@ -21,7 +21,7 @@ export default function Register() {
       setLoading(true);
 
       await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "http://157.180.17.101:5000/api/auth/register",
         data
       );
 

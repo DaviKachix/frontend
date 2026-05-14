@@ -44,7 +44,7 @@ export default function LeadershipPage() {
 
         {/* 🔥 GLOBAL HEADER LOGIC */}
         {user ? (
-          <Topbar user={user} toggle={() => setOpen(true)} />
+          <Topbar/>
         ) : (
           <Navbar />
         )}

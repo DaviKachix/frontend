@@ -36,7 +36,7 @@ export default function EditProfilePage() {
     setUser(parsed);
 
     axios
-      .get(`http://localhost:5000/api/profiles/${parsed.id}`)
+      .get(`http://157.180.17.101:5000/api/profiles/${parsed.id}`)
       .then((res) => {
         if (res.data) setForm(res.data);
       })
@@ -56,7 +56,7 @@ export default function EditProfilePage() {
       setUploading(true);
 
       const res = await axios.post(
-        "http://localhost:5000/api/upload/profile",
+        "http://157.180.17.101:5000/api/upload/profile",
         data,
         {
           headers: { "Content-Type": "multipart/form-data" },
@@ -80,7 +80,7 @@ export default function EditProfilePage() {
     try {
       setLoading(true);
 
-      await axios.put("http://localhost:5000/api/profiles/update", {
+      await axios.put("http://157.180.17.101:5000/api/profiles/update", {
         user_id: user.id,
         ...form,
       });
@@ -112,7 +112,7 @@ export default function EditProfilePage() {
       <div className="flex-1 flex flex-col md:ml-72">
 
         {/* TOPBAR */}
-        <Topbar user={user} toggle={() => setOpen(true)} />
+        <Topbar/>
 
         {/* CONTENT */}
         <main className="max-w-3xl mx-auto w-full p-6 space-y-6">

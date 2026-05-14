@@ -10,7 +10,7 @@ export default function ProfileCard({ user }: any) {
     if (!user?.id) return;
 
     axios
-      .get(`http://localhost:5000/api/profiles/${user.id}`)
+      .get(`http://157.180.17.101:5000/api/profiles/${user.id}`)
       .then((res) => setProfile(res.data))
       .catch(() => {});
   }, [user]);

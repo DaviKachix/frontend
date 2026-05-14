@@ -25,7 +25,7 @@ export default function Loading() {
       {checked && (
         <div className="w-full">
           {user ? (
-            <Topbar user={user} toggle={() => {}} />
+            <Topbar />
           ) : (
             <Navbar />
           )}

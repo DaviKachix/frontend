@@ -26,7 +26,7 @@ export default function ProfileViewPage() {
     try {
       setLoading(true);
       const res = await axios.get(
-        `http://localhost:5000/api/profiles/${userId}`
+        `http://157.180.17.101:5000/api/profiles/${userId}`
       );
       setProfile(res.data);
     } finally {
@@ -81,7 +81,7 @@ export default function ProfileViewPage() {
       <div className="flex-1 flex flex-col">
 
         {/* Topbar */}
-        <Topbar user={user} toggle={() => setOpen(true)} />
+        <Topbar/>
 
         {/* Content */}
         <main className="max-w-5xl mx-auto w-full px-4 md:px-8 py-8 space-y-6">
